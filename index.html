@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Simple camera app that saves photos in local storage">
+    <meta name="theme-color" content="#000000">
+    <title>Bröllopsfotografen</title>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="manifest" href="./manifest.json">
+    <link rel="apple-touch-icon" href="./images/icon-192.png">
+    <script src="https://kit.fontawesome.com/562206eaf4.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <header>
+        <img src="./images/logo-transparent.png" alt="">
+        <div class="header-icon">
+            <div class="icon" id="camera-page">
+                <i class="fa-solid fa-camera-retro fa-2xl" ></i>
+            </div>
+            <div class="icon" id="gallery-page">
+                <i class="fa-solid fa-images fa-2xl"></i>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="camera-section active-page">
+            <h2>Say cheese!</h2>
+            <div class="frame-camera">
+                <video src="" id="camera" autoplay></video>
+            </div>
+            <button id="camera-stream"><span>Föreviga ett ögonblick<i class="fa-solid fa-camera fa-1xl button-i icon-camera"></i></span></button>
+        </section>
+        <section class="canvas-section">
+            <h2>Underbart! Tack för att du kom och firade med oss!</h2>
+            <div class="frame-canvas">
+                <canvas id="picture" class="flash"></canvas>
+            </div>
+            <button id="canvas-capture"><span>Fånga ett nytt ögonblick<i class="fa-solid fa-heart button-i icon-heart"></i></span></button>
+        </section>
+        <section class="gallery-section">
+            <section id="gallery"></section>
+            <i onClick="scrollToTop()" class="fa-solid fa-angles-up back-to-top "></i>
+        </section>
+
+
+    </main>
+    <section class="modal-section">
+        <div class="modal-container">
+            <img src="" id="modalImage">
+        </div>
+    </section>
+
+
+    <script src="./index.js"></script>
+
+</body>
+</html>

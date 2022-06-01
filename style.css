@@ -1,0 +1,322 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@200;300;400;500&display=swap');
+
+*, *::after, *::before{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior:smooth;
+    transition: 0.1s ease-in-out;
+}
+body{
+    height: 100vh;
+    position: relative;
+    text-align: center;
+    font-family: 'Raleway', sans-serif;
+}
+
+/*---------HEADER---------*/
+
+header{
+    position: fixed;
+    background-color: rgb(234, 172, 172);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.8rem;
+    z-index: 1;
+    width: 100vw;
+    height: 7vh;
+    -webkit-box-shadow: 0px 9px 15px 5px rgba(0,0,0,0.7); 
+    box-shadow: 0px 9px 20px 1px rgba(0,0,0,0.7);
+}
+header > img{
+    height: 3rem;
+    max-width: 100%;
+}
+.header-icon{
+    display: flex;
+}
+.icon{
+    margin-left: 1.5rem;
+
+}
+.icon:hover{
+    cursor:pointer;
+    color: white;
+}
+
+
+/*---------MAIN---------*/
+
+main{
+    position: relative;
+    min-height: 100vh;
+    background: no-repeat url(./images/bg.jpg) center/cover;
+
+}
+main > section{
+    display:none;
+}
+.active-page{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+}
+h2{
+    margin-bottom: 2rem;
+    text-transform: uppercase;
+    padding: 0 1rem;
+}
+
+/*Camera-section*/
+#camera{
+    width: 90vw;
+    -webkit-box-shadow: 0px 3px 15px 5px rgba(0,0,0,0.7); 
+    box-shadow: 0px 3px 15px 5px rgba(0,0,0,0.7);
+}
+
+.icon-camera{
+    color: rgb(226, 128, 221);
+}
+
+/*Canvas-section*/
+#picture{
+    padding: 1rem;
+    border: calc(2*1rem) solid #0000;
+    outline: 1px solid #fff;
+    outline-offset: calc(-1*1rem);
+    background: conic-gradient(from 90deg at 1px 1px,#0000 90deg,#fff 0);
+
+}
+#picture:hover{
+    cursor:pointer;
+}
+.icon-heart{
+    color: red;
+}
+.flash {
+    animation: blinker 0.5s linear alternate;
+}
+  
+@keyframes blinker {
+  50% {
+    opacity: 0;
+  }
+}
+ 
+
+/*Gallery-section*/
+.gallery-section{
+    overflow: scroll;
+} 
+#gallery{
+    display: grid;
+    grid-template-columns: repeat(2,auto) ;
+    gap: 1rem;
+    position: absolute;
+    top:0;
+    margin: 5rem 1rem;
+}
+.image-container{
+    position: relative;
+}
+.image-container > img{
+    border: white 1px solid;
+    -webkit-box-shadow: 0px 3px 15px 5px rgba(0,0,0,0.7); 
+    box-shadow: 0px 3px 15px 5px rgba(0,0,0,0.7);
+    width: 100%;
+    height: 200px;
+    padding: 0.5rem 0.5rem 2rem 0.5rem;
+    object-fit: cover;
+}
+.view, .delete{
+    position: absolute;
+    bottom:5%;
+    width: fit-content;
+}
+.view::after, .delete::after{
+    content: "";
+    display: flex;
+    width: 0;
+    border-bottom: 3px solid white;
+    transition: 0.5s ease;
+}
+.view:hover, .delete:hover{
+    cursor:pointer;
+}
+.view:hover::after, .delete:hover::after{
+    cursor: pointer;
+    border-bottom: 3px solid white;
+    width: 100%;
+}
+
+.delete{
+    right: 5%;
+}
+.view{
+    left: 5%;
+}
+.view > i, .delete > i{
+    margin-right: 0.2rem;
+}
+
+/*---------BUTTON---------*/
+
+button {
+    font-family: 'Raleway', sans-serif;
+
+    margin-top: 2rem;
+    position: relative;
+    height: 3rem;
+    padding: 1rem;
+    border: 2px solid #000;
+    background: #e8e8e8;
+    transition: all .05s linear;
+    text-transform: uppercase;
+    -webkit-box-shadow: 0px 3px 15px 5px rgba(0,0,0,0.7); 
+    box-shadow: 0px 3px 15px 5px rgba(0,0,0,0.7);
+}  
+button:before, button:after {
+    content: "";
+    position: absolute;
+    background: #e8e8e8;
+    transition: all .2s linear;
+    color: black;
+}
+button:before {
+    width: calc(100% + 6px);
+    height: calc(100% - 16px);
+    top: 8px;
+    left: -3px;
+}
+button:after {
+    width: calc(100% - 16px);
+    height: calc(100% + 6px);
+    top: -3px;
+    left: 8px;
+}
+button:hover {
+    cursor: pointer;
+}
+button:active {
+    transform: scale(0.95);
+}
+button:hover:before {
+    height: calc(100% - 32px);
+    top: 16px;
+}
+button:hover:after {
+    width: calc(100% - 32px);
+    left: 16px;
+}
+button span {
+    font-size: 15px;
+    z-index: 3;
+    position: relative;
+    font-weight: 500;
+}
+.button-i{
+    margin-left: 0.5rem;
+}
+
+/*scroll-back-to-top*/
+.back-to-top {
+    position: fixed;
+    bottom: 5%;
+    right: 5%;
+    font-size: 50px;
+    color: black;
+    z-index: 100;
+}
+.back-to-top:hover{
+    cursor:pointer;
+    color: white;
+}
+
+
+/*---------MODAL---------*/
+
+.modal-section{
+
+    display: none;
+}
+.show{
+    display: flex;
+    background-color: rgba(0,0,0,0.9);
+    z-index: 100;
+    height: 100vh;
+    width: 100vw;
+    position: fixed;
+    top:0;
+    left:0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.modal-container{
+    width: 100vw;
+}
+#modalImage{
+    width: 100%;
+    -webkit-box-shadow: 0px 3px 15px 5px rgba(0,0,0,0.9); 
+    box-shadow: 0px 3px 15px 5px rgba(0,0,0,0.9);
+}
+
+
+/*---------MEDIAQUERY---------*/
+
+@media screen and (min-width:700px){
+    header{
+        height: 10vw;
+    }
+    #camera, #picture{
+        width: 50vw;
+    }
+    button {    
+        margin-top: 3rem;
+    }  
+
+    #gallery{
+        margin: 7rem 1rem;
+    }
+    .image-container > img{
+        height: 200px;
+    }
+    #modalImage{
+        width: 90%;
+    }  
+}
+
+@media screen and (min-width:1000px){
+    #camera, #picture{
+        width: 40vw;
+    }
+    #gallery{
+        grid-template-columns: repeat(3,auto) ;
+        margin-top: 7rem;
+    }
+    header{
+        height: 7vw;
+    }
+    h2{
+        margin-top: 4rem;
+    }
+    #modalImage{
+        width: 80%;
+    }
+}
+@media screen and (min-width: 1400px) {
+    #gallery{
+        grid-template-columns: repeat(4,auto) ;
+        margin-top: 10rem;
+    }
+    header{
+        height: 7vw;
+    }
+}
+
+
+

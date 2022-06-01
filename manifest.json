@@ -1,0 +1,27 @@
+{
+    "name": "Bröllopsfotografen",
+    "short_name": "BF",
+    "start_url": "/",
+    "display": "standalone",
+    "orientation": "portrait-primary",
+    "theme_color": "#000000",
+    "background_color": "#f2f2f2",
+    "description": "A gallery PWA",
+    "icons": [
+        {
+            "src": "images/icon-144.png",
+            "type": "image/png",
+            "sizes": "144x144"
+        },
+        {
+            "src": "images/icon-192.png",
+            "type": "image/png",
+            "sizes": "192x192"
+        },
+        {
+            "src": "images/icon-512.png",
+            "type": "image/png",
+            "sizes": "512x512"
+        }
+    ]
+}
