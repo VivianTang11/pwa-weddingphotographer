@@ -222,19 +222,7 @@ button span {
     margin-left: 0.5rem;
 }
 
-/*scroll-back-to-top*/
-.back-to-top {
-    position: fixed;
-    bottom: 5%;
-    right: 5%;
-    font-size: 50px;
-    color: black;
-    z-index: 100;
-}
-.back-to-top:hover{
-    cursor:pointer;
-    color: white;
-}
+
 
 
 /*---------MODAL---------*/

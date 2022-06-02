@@ -74,10 +74,10 @@ getImages().forEach(img => {
 })
 
 function saveImages(images){
-    // if (navigator.onLine) {
-    //     updateJSON(images)
-    // }
-    navigator.onLine &&= updateJSON(images)
+    if (navigator.onLine) {
+        updateJSON(images)
+    }
+    // navigator.onLine &&= updateJSON(images)
     localStorage.setItem('weddingApp', JSON.stringify(images))
 }
 
@@ -98,10 +98,10 @@ function createImageElement(id,content){
     })
     deleteElement.addEventListener('click', () => {
         let doDelete = confirm('Vill du verkligen tabort???')
-        // if (doDelete) {
-        //     deleteImage(id, divImageElement)
-        // }
-        doDelete &&= deleteImage(id, divImageElement)
+        if (doDelete) {
+            deleteImage(id, divImageElement)
+        }
+        // doDelete &&= deleteImage(id, divImageElement)
     })
 
     divImageElement.append(viewElement, deleteElement,imageElement)
@@ -168,10 +168,10 @@ window.addEventListener('load', async () => {
     }
     if (navigator.onLine) {
         let localStorageImages = JSON.parse(localStorage.getItem('weddingApp') || '[]')
-        // if (!localStorage.length == 0) {
-        //     updateJSON(localStorageImages)
-        // }
-        localStorage.length ??= updateJSON(localStorageImages)
+        if (!localStorage.length == 0) {
+            updateJSON(localStorageImages)
+        }
+        // localStorage.length ??= updateJSON(localStorageImages)
     }
     activePage()
 })
